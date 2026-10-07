@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mi-web-deployment
+  labels:
+    app: mi-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mi-web
+  template:
+    metadata:
+      labels:
+        app: mi-web
+    spec:
+      containers:
+      - name: mi-web
+        # Cambia TU_USUARIO por tu usuario real de GitHub más adelante
+        image: ghcr.io/TU_USUARIO/mi-web-k8s:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "100m"
+            memory: "128Mi"
