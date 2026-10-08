@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: mi-web
-        # Cambia TU_USUARIO por tu usuario real de GitHub más adelante
-        image: ghcr.io/TU_USUARIO/mi-web-k8s:latest
+        image: mi-web:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
         resources:
